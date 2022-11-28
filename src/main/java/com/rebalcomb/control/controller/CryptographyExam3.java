@@ -1,5 +1,6 @@
 package com.rebalcomb.control.controller;
 
+import com.rebalcomb.control.DataRequest;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -23,6 +24,7 @@ public class CryptographyExam3 {
     @GetMapping("/task1")
     public ModelAndView getTask1(ModelAndView modelAndView){
         modelAndView.setViewName("task1/task1");
+        modelAndView.addObject("dataRequest", new DataRequest());
         return modelAndView;
     }
 

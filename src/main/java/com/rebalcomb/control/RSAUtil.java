@@ -88,6 +88,7 @@ public class RSAUtil {
     }
 
     //todo метод для шифрування = Message^PublicKeyMod(module)
+
     public static String encrypt(String value, BigInteger publicKey, BigInteger module) {
         BigInteger M = new BigInteger(value);
         return M.modPow(publicKey, module).toString();
