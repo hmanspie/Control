@@ -1,30 +1,37 @@
 <div th:fragment="settingsFragment">
     <main id="main">
         <div class="container-fluid mt-4 ms-2">
-            <form>
-                <div style="display: inline-flex;  flex-wrap: wrap; gap: 20px; width: 100%;">
-                    <div style="width: 30%; margin: 0 0 0 10px;">
-                        <text class="h3" style="font-size: 30px;">Elgamal p = </text>
-                        <input  type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;">
+            <form th:object="${request}" th:action="@{/task2Calculate}" th:method="post">
+                <div style="display: inline-flex;  flex-wrap: wrap; gap: 20px; width: 50%;">
+                    <div style="width: 20%; margin: 0 0 0 5px;">
+                        <text class="h3" style="font-size: 30px;">p = </text>
+                        <input th:field="*{p}" type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;">
                     </div>
-                    <div style="width: 30%; margin: 0 0 0 10px;">
-                        <text class="h3" style="font-size: 30px;">q = </text>
-                        <input  type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;">
+                    <div style="width: 20%; margin: 0 0 0 5px;">
+                        <text class="h3" style="font-size: 30px;">g = </text>
+                        <input th:field="*{g}" type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;">
                     </div>
-                    <div style="width: 30%; font-size: 30px;  margin: 0 0 0 10px;">
+                    <div style="width: 20%; font-size: 30px;  margin: 0 0 0 5px;">
                         <text >x = </text>
-                        <input  type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;">
+                        <input th:field="*{x}" type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;">
                     </div>
                 </div>
-                <p >
-                <p style="font-size: 30px;  margin: 0 0 0 10px;">Розшифрувати повідомлення  <text >M = </text>
-                        <input  type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;"></p>
-                        <p >
+
+                <p style="font-size: 30px;  margin: 0 0 0 10px;">Зашифрувати(розшифрувати) повідомлення</p>
                 <p style="font-size: 30px;  margin: 0 0 0 10px;"><text >k = </text>
-                        <input  type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;">
-                        <button type="submit" style="width: 250px; margin: 15px 0 0 10px; font-size: 30px;">Розрахувати</button></p> 
-                        <textarea style="width: 90%; height: 55%; margin: 5%; border: 2px solid black;"></textarea>                   
+                        <input th:field="*{k1}" type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;"></p>
+                <p style="font-size: 30px;  margin: 0 0 0 10px;"><text >M = </text>
+                        <input th:field="*{M1}"  type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;"></p>
+
+                <p style="font-size: 30px;  margin: 0 0 0 10px;">Підписати повідомлення(перевірити підпис)</p>
+                <p style="font-size: 30px;  margin: 0 0 0 10px;"><text >k = </text>
+                    <input th:field="*{k2}"  type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;"></p>
+                <p style="font-size: 30px;  margin: 0 0 0 10px;"><text >M = </text>
+                    <input th:field="*{M2}" type="text" style="width: 150px;  margin: 10px 0 0 0; font-size: 30px; border: 2px solid black;"></p>
+
+                <button type="submit" style="width: 250px; margin: 15px 0 0 10px; font-size: 30px;">Розрахувати</button>
             </form>
+            <textarea th:text="${resultt}" style="width: 40%; height: 50%; margin: 1%; border: 2px solid black;"></textarea>
             </div>
     </main>
 </div>  

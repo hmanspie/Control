@@ -1,4 +1,5 @@
-package com.rebalcomb.control;
+package com.rebalcomb.control.dto;
+
 
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
@@ -6,27 +7,24 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.experimental.FieldDefaults;
 
-import java.sql.Timestamp;
-
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @FieldDefaults(level = AccessLevel.PRIVATE)
-public class DataRequest {
+public class ElgamalRequest {
 
     private String p;
 
-    private String q;
+    private String g;
 
-    private String e;
+    private String x;
 
-    private String d;
+    private String k1;
+
+    private String k2;
 
     private String M1;
 
-    private String C;
-
     private String M2;
 
-    private String S;
 }
