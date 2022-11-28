@@ -6,21 +6,21 @@
     <link rel="stylesheet" th:href="@{/css/task3/task3.css}">
 </head>
 <body>
-<ul>
-    <li class="list-item">
-        <label class="label" for="H">Ho = </label>
-        <input class="input" type="text" id="H">
-    </li>
-    <li class="list-item">
-        <label class="label" for="countBitInBlock">К-сть біт у блоці = </label>
-        <input class="input" type="text" id="countBitInBlock">
-    </li>
-    <li class="list-item">
-        <label class="label" for="binaryMessage">Повідомлення (у бітах) = </label>
-        <input class="input" type="text" id="binaryMessage">
-    </li>
-    <li class="list-item">
-    </li>
+<form>
+    <ul class="list">
+        <li class="list-item">
+            <label class="label" for="H">Ho = </label>
+            <input class="input" type="text" id="H">
+        </li>
+        <li class="list-item">
+            <label class="label" for="countBitInBlock">К-сть біт у блоці = </label>
+            <input class="input" type="text" id="countBitInBlock">
+        </li>
+        <li class="list-item">
+            <label class="label" for="binaryMessage">Повідомлення (у бітах) = </label>
+            <input class="input" type="text" id="binaryMessage">
+        </li>
+    </ul>
     <span class="label">Рівняння у вигляді: <br> (H
         <select class="select" name="leftH">
             <option label="<<" value="<<"></option>
@@ -37,6 +37,10 @@
             <option label=">>" value=">>"></option>
         </select>
         <input class="numberInput" type="text"></span>
-</ul>
+</form>
+<div>
+    <button class="btn" type="submit">Розрахувати</button>
+</div>
+<textarea class="result" readonly>Пімкін - лох</textarea>
 </body>
 </html>
