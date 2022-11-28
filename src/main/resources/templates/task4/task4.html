@@ -6,24 +6,27 @@
     <link rel="stylesheet" th:href="@{/css/task4/task4.css}">
 </head>
 <body>
-<div class="container">
-    <span class="member">1 учасник: </span>
-    <div>
-        <input type="text" placeholder="Координата Х" >
-        <input type="text" placeholder="Координата Y" >
+<form th:object="${task4}" th:action="@{/task4}" th:method="post">
+    <div class="container">
+        <span class="member">1 учасник: </span>
+        <div>
+            <input type="text" placeholder="Координата Х" th:field="*{x1}">
+            <input type="text" placeholder="Координата Y" th:field="*{y1}">
+        </div>
+        <span class="member">2 учасник: </span>
+        <div>
+            <input type="text" placeholder="Координата Х" th:field="*{x2}">
+            <input type="text" placeholder="Координата Y" th:field="*{y2}">
+        </div>
+        <span class="member">3 учасник: </span>
+        <div>
+            <input type="text" placeholder="Координата Х" th:field="*{x3}">
+            <input type="text" placeholder="Координата Y" th:field="*{y3}">
+        </div>
+        <button class="btn" type="submit">Розрахувати</button>
+        <textarea class="result" rows="30" th:text="${result}">Результат</textarea>
+        <img th:src="@{/image/task4/task4.jpg}">
     </div>
-    <span class="member">2 учасник: </span>
-    <div>
-        <input type="text" placeholder="Координата Х" >
-        <input type="text" placeholder="Координата Y" >
-    </div>
-    <span class="member">3 учасник: </span>
-    <div>
-        <input type="text" placeholder="Координата Х" >
-        <input type="text" placeholder="Координата Y" >
-    </div>
-    <button class="btn" type="submit">Розрахувати</button>
-    <textarea class="result" rows="30">Результат</textarea>
-</div>
+</form>
 </body>
 </html>
