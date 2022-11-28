@@ -1,6 +1,11 @@
+.list {
+    padding: 0;
+}
+
 .list-item {
     display: flex;
     align-items: center;
+    margin-top: 5px;
 }
 
 .label {
@@ -25,4 +30,16 @@
     width: 80px;
     height: 35px;
     font-size: 30px;
+}
+
+.result {
+    height: 1000px;
+    width: 100%;
+    font-size: 25px;
+}
+
+.btn {
+    height: 100px;
+    width: 250px;
+    font-size: 40px;
 }
