@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Task3</title>
+    <link rel="stylesheet" th:href="@{/css/task3/task3.css}">
+</head>
+<body>
+<ul>
+    <li class="list-item">
+        <label class="label" for="H">Ho = </label>
+        <input class="input" type="text" id="H">
+    </li>
+    <li class="list-item">
+        <label class="label" for="countBitInBlock">К-сть біт у блоці = </label>
+        <input class="input" type="text" id="countBitInBlock">
+    </li>
+    <li class="list-item">
+        <label class="label" for="binaryMessage">Повідомлення (у бітах) = </label>
+        <input class="input" type="text" id="binaryMessage">
+    </li>
+    <li class="list-item">
+    </li>
+    <span class="label">Рівняння у вигляді: <br> (H
+        <select class="select" name="leftH">
+            <option label="<<" value="<<"></option>
+            <option label=">>" value=">>"></option>
+        </select>
+        <input class="numberInput" type="text"> ) + (M
+        <select class="select" name="leftH">
+            <option label="<<" value="<<"></option>
+            <option label=">>" value=">>"></option>
+        </select>
+            <input class="numberInput" type="text"> )
+        <select class="select" name="leftH">
+            <option label="<<" value="<<"></option>
+            <option label=">>" value=">>"></option>
+        </select>
+        <input class="numberInput" type="text"></span>
+</ul>
+</body>
+</html>
