@@ -1,0 +1,28 @@
+.list-item {
+    display: flex;
+    align-items: center;
+}
+
+.label {
+    font-size: 40px;
+}
+
+.input {
+    margin-left: 10px;
+    height: 30px;
+    width: 50%;
+    font-size: 27px;
+}
+
+.numberInput {
+    margin-left: 10px;
+    width: 80px;
+    height: 35px;
+    font-size: 27px;
+}
+
+.select {
+    width: 80px;
+    height: 35px;
+    font-size: 30px;
+}

@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:th="http://www.thymeleaf.org" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Menu</title>
+    <link rel="stylesheet" th:href="@{/css/menu/menu.css}">
+</head>
+<body>
+<div class="container">
+    <ul class="menu">
+        <li><a th:href="@{/test}">Тести</a></li>
+        <li><a th:href="@{/task1}">Завдання 1 (RSA)</a></li>
+        <li><a th:href="@{/task2}">Завдання 2 (Ель-Гамаль)</a></li>
+        <li><a th:href="@{/task3}">Завдання 3 (Меркле-Дамгора)</a></li>
+        <li><a th:href="@{/task4}">Завдання 4 (Шамір)</a></li>
+    </ul>
+</div>
+</body>
+</html>
