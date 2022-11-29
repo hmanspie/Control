@@ -2,8 +2,11 @@ package com.rebalcomb.control.controller;
 
 import com.rebalcomb.control.dto.DataRequest;
 import com.rebalcomb.control.dto.ElgamalRequest;
+import com.rebalcomb.control.dto.Task3Dto;
 import com.rebalcomb.control.dto.Task4;
 import com.rebalcomb.control.RSAUtil;
+import com.rebalcomb.control.service.Task3;
+import org.slf4j.Logger;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.ModelAttribute;
@@ -11,9 +14,14 @@ import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.servlet.ModelAndView;
 
 import java.math.BigInteger;
+import java.util.Objects;
+
+import static org.slf4j.LoggerFactory.*;
 
 @Controller
 public class CryptographyExam3 {
+
+    private Logger logger = getLogger(CryptographyExam3.class);
 
     @GetMapping("/")
     public ModelAndView getMenu(ModelAndView modelAndView){
@@ -170,12 +178,45 @@ public class CryptographyExam3 {
     @GetMapping("/task3")
     public ModelAndView getTask3(ModelAndView modelAndView){
         modelAndView.setViewName("task3/task3");
+        modelAndView.addObject("task3Dto", new Task3Dto());
         return modelAndView;
     }
 
     @PostMapping("/task3")
-    public ModelAndView postTask3(ModelAndView modelAndView){
+    public ModelAndView postTask3(ModelAndView modelAndView, String firstSelect, String secondSelect, String thirdSelect, @ModelAttribute Task3Dto task3Dto){
         modelAndView.setViewName("task3/task3");
+
+        char[] Ho = task3Dto.getH0().toCharArray();
+        int blockLen = Integer.parseInt(task3Dto.getBlockLen());
+        char[] message = task3Dto.getMessage().toCharArray();
+        char[] equation = new char[6];
+
+        if (Objects.equals(firstSelect, "<<")){
+            equation[0] = '0';
+        } else {
+            equation[0] = '1';
+        }
+
+        equation[1] = task3Dto.getFirstNumber().toCharArray()[0];
+
+        if (Objects.equals(secondSelect, "<<")){
+            equation[2] = '0';
+        } else {
+            equation[2] = '1';
+        }
+
+        equation[3] = task3Dto.getFirstNumber().toCharArray()[0];
+
+        if (Objects.equals(thirdSelect, "<<")){
+            equation[4] = '0';
+        } else {
+            equation[4] = '1';
+        }
+
+        equation[5] = task3Dto.getFirstNumber().toCharArray()[0];
+
+        Task3 task3engine = new Task3(Ho, blockLen, message, equation);
+        modelAndView.addObject("result", Task3.getFinalResult());
         return modelAndView;
     }
 

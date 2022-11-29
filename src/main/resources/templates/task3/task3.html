@@ -6,41 +6,41 @@
     <link rel="stylesheet" th:href="@{/css/task3/task3.css}">
 </head>
 <body>
-<form>
+<form th:object="${task3Dto}" th:action="@{/task3}" th:method="post">
     <ul class="list">
         <li class="list-item">
             <label class="label" for="H">Ho = </label>
-            <input class="input" type="text" id="H">
+            <input class="input" type="text" id="H" th:field="*{h0}">
         </li>
         <li class="list-item">
             <label class="label" for="countBitInBlock">К-сть біт у блоці = </label>
-            <input class="input" type="text" id="countBitInBlock">
+            <input class="input" type="text" id="countBitInBlock" th:field="*{blockLen}">
         </li>
         <li class="list-item">
             <label class="label" for="binaryMessage">Повідомлення (у бітах) = </label>
-            <input class="input" type="text" id="binaryMessage">
+            <input class="input" type="text" id="binaryMessage" th:field="*{message}">
         </li>
     </ul>
     <span class="label">Рівняння у вигляді: <br> (H
-        <select class="select" name="leftH">
-            <option label="<<" value="<<"></option>
-            <option label=">>" value=">>"></option>
+        <select class="select" name="firstSelect" id="firstSelect">
+            <option label="<<" value="<<" th:value="'<<'" th:text="'<<'"></option>
+            <option label=">>" value=">>" th:value="'>>'" th:text="'>>'"></option>
         </select>
-        <input class="numberInput" type="text"> ) + (M
-        <select class="select" name="leftH">
-            <option label="<<" value="<<"></option>
-            <option label=">>" value=">>"></option>
+        <input class="numberInput" type="text" th:field="*{firstNumber}"> ) + (M
+        <select class="select" name="secondSelect" id="secondSelect">
+            <option label="<<" value="<<" th:value="'<<'" th:text="'<<'"></option>
+            <option label=">>" value=">>" th:value="'>>'" th:text="'>>'"></option>
         </select>
-            <input class="numberInput" type="text"> )
-        <select class="select" name="leftH">
-            <option label="<<" value="<<"></option>
-            <option label=">>" value=">>"></option>
+            <input class="numberInput" type="text" th:field="*{secondNumber}"> )
+        <select class="select" name="thirdSelect" id="thirdSelect">
+            <option label="<<" value="<<" th:value="'<<'" th:text="'<<'"></option>
+            <option label=">>" value=">>" th:value="'>>'" th:text="'>>'"></option>
         </select>
-        <input class="numberInput" type="text"></span>
+        <input class="numberInput" type="text" th:field="*{thirdNumber}"></span>
+    <div>
+        <button class="btn" type="submit">Розрахувати</button>
+    </div>
 </form>
-<div>
-    <button class="btn" type="submit">Розрахувати</button>
-</div>
-<textarea class="result" readonly>Пімкін - лох</textarea>
+<textarea class="result" th:text="${result}" readonly>Пімкін - лох</textarea>
 </body>
 </html>
