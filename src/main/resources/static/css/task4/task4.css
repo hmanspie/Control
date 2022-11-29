@@ -18,6 +18,11 @@ input {
 .result {
     margin-top: 50px;
     width: 90%;
+    font-size: 25px;
+}
+
+.image {
+    width: 1000px;
 }
 
 .btn {

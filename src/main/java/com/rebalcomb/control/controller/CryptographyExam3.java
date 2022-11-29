@@ -242,9 +242,16 @@ public class CryptographyExam3 {
 
         double res = first + second + thirth;
 
-        String result = "(x1 - x2) * (x1 - x3)";
+        StringBuilder sb = new StringBuilder();
+        sb.append("P(x) = Замініть всі дані (х1,у1; x2,y2; x3,y3 і тд на фото, крім х на  оці дані):\n");
 
-        modelAndView.addObject("result", result);
+        sb.append("(x1,y1) = (" + task4.getX1() + ", " + task4.getY1() + ")\n" );
+        sb.append("(x2,y2) = (" + task4.getX2() + ", " + task4.getY2() + ")\n" );
+        sb.append("(x3,y3) = (" + task4.getX3() + ", " + task4.getY3() + ")\n" );
+
+        sb.append("P(x)-:" + res);
+
+        modelAndView.addObject("result", sb.toString());
         return modelAndView;
     }
 
